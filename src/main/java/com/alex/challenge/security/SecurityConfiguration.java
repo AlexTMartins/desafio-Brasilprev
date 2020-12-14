@@ -19,14 +19,16 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
      
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
-            .httpBasic()
-            .and()
+        http.httpBasic().and()
                 .authorizeRequests()
                     .antMatchers(HttpMethod.POST, "/**").hasRole("ADMIN")
                     .antMatchers(HttpMethod.PATCH, "/**").hasRole("ADMIN")
                     .antMatchers(HttpMethod.PUT, "/**").hasRole("ADMIN")
                     .antMatchers(HttpMethod.DELETE, "/**").hasRole("ADMIN")
+                .and()
+                	.authorizeRequests()
+                	.antMatchers("/swagger-resources/configuration/ui", "/swagger-resources", "/swagger-resources/configuration/security", "/swagger-ui.html", "/swagger-ui/", "/webjars/**")
+                	.permitAll()
                 .and()
                     .csrf()
                         .disable();
