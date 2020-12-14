@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import com.alex.challenge.model.User;
+import com.alex.challenge.model.v1.User;
 import com.alex.challenge.repository.UserRepository;
 
 @ExtendWith(SpringExtension.class)

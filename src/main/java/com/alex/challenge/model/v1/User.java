@@ -1,4 +1,4 @@
-package com.alex.challenge.model;
+package com.alex.challenge.model.v1;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
