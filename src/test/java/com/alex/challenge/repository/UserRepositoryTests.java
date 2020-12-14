@@ -1,4 +1,4 @@
-package repository;
+package com.alex.challenge.repository;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -11,6 +11,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.alex.challenge.model.User;
+import com.alex.challenge.repository.UserRepository;
 
 @ExtendWith(SpringExtension.class)
 @DataJpaTest
