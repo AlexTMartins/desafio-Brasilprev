@@ -1,14 +1,27 @@
-# desafio-brasilprev
-
-##
+# Brasilprev - Desafio Java
 
 
+## 🚀 Technologies
+
+Technologies that I used to develop this api:
+
+- Spring Boot
+- Spring Data JPA
+- Spring Data Rest
+- Spring Security
+- Swagger
+- Lombok
+
+## 💻 Getting started
 
 
 
 
 
-### Brasilprev - Desafio Java
+
+
+### Brasilprev - Desafio Java - TECHMAHINDRA 
+
 Você foi convidado a realizar um desafio para a vaga de desenvolvedor(a) back-end Java.
 
 Queremos avaliar sua qualidade de código, capacidade de análise, resolução de
