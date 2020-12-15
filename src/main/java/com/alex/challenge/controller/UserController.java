@@ -1,6 +1,5 @@
 package com.alex.challenge.controller;
 
-import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +13,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.alex.challenge.model.v1.Address;
 import com.alex.challenge.model.v1.User;
+import com.alex.challenge.repository.AddressRepository;
 import com.alex.challenge.repository.UserRepository;
 
 @RestController
@@ -22,6 +23,9 @@ public class UserController {
 
 	@Autowired
 	private UserRepository userRepository;
+	@Autowired
+	private AddressRepository addressRepository;
+	
 	
 	@GetMapping("/v1/users/{id}")
 	public ResponseEntity<User> getById(@PathVariable(value = "id") Long id) {
@@ -37,7 +41,14 @@ public class UserController {
 	
 	@PostMapping("/v1/users/")
 	public User post(@RequestBody User user) {
-	    return userRepository.save(user);
+		Address address = user.getAddress();
+		user.setAddress(null);
+	    User newUser = userRepository.save(user);
+	    address.setUser(newUser);
+	    user.setAddress(address);
+	    addressRepository.save(address);
+	    
+	    return user;
 	}
 
     @PutMapping("/v1/users/{id}")
