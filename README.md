@@ -14,9 +14,30 @@ Technologies that I used to develop this api:
 
 ## 💻 Getting started
 
-WIP 
+##### OPEN:
 
+GET /v1/users/{id}
 
+##### CLOSED: (user: admin, pass: admin)
+
+POST /v1/users/
+```json
+{
+  "name": "Alex",
+  "document": "12376598700",
+  "address": {
+    "street": "Av my home 123 n 14",
+    "zipCode": "04909009",
+    "city": "São Paulo",
+    "state": "SP",
+    "country": "Brasil"
+  }
+}
+```
+
+PUT /v1/users/{id}
+
+DELETE /v1/users/{id}
 
 
 
