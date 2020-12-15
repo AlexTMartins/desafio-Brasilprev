@@ -3,10 +3,10 @@ package com.alex.challenge;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import lombok.Data;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@Data
+@EnableSwagger2
 public class ChallengeApplication {
 
 	public static void main(String[] args) {

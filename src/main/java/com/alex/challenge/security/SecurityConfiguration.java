@@ -11,6 +11,16 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
  
+	private static final String[] AUTH_WHITELIST = {
+			"/swagger-resources/configuration/ui",
+			"/swagger-resources",
+			"/swagger-resources/configuration/security",
+			"/swagger-ui.html",
+			"/swagger-ui/",
+			"/v2/api-docs",
+			"/webjars/**"
+	};
+	
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
@@ -27,7 +37,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
                     .antMatchers(HttpMethod.DELETE, "/**").hasRole("ADMIN")
                 .and()
                 	.authorizeRequests()
-                	.antMatchers("/swagger-resources/configuration/ui", "/swagger-resources", "/swagger-resources/configuration/security", "/swagger-ui.html", "/swagger-ui/", "/webjars/**")
+                	.antMatchers(AUTH_WHITELIST)
                 	.permitAll()
                 .and()
                     .csrf()
