@@ -14,7 +14,11 @@ Technologies that I used to develop this api:
 
 ## 💻 Getting started
 
+##### OPEN:
+
 GET /v1/users/{id}
+
+##### CLOSED: (user: admin, pass: admin)
 
 POST /v1/users/
 ```json
