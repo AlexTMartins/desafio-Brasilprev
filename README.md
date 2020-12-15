@@ -39,6 +39,9 @@ PUT /v1/users/{id}
 
 DELETE /v1/users/{id}
 
+### DOC - HEROKU
+
+https://alexandro-challenge-api.herokuapp.com/swagger-ui.html
 
 
 
